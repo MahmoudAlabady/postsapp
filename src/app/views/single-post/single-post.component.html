@@ -1,0 +1,27 @@
+<button type="button" class="btn btn-primary" (click)="back()">Back</button>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">userId</th>
+        <th scope="col">id</th>
+        <th scope="col">title</th>
+        <th scope="col">body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{posts.userId}}</th>
+        <td>{{posts.id}}</td>
+        <td>{{posts.title}}</td>
+        <td>{{posts.body}}</td>
+        
+      </tr>
+      <td>
+        <a routerLink="editPosts/{{ posts.id }}">
+          <button type="button" class="btn btn-success">update</button>
+        </a>
+      </td>
+     
+    </tbody>
+  </table>

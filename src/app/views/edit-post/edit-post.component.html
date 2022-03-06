@@ -1,0 +1,13 @@
+<form #updateForm="ngForm" (ngSubmit)="updatePost(updateForm.value); updateForm.reset()" class="container">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="post.title" ngModel #title="ngModel" required/>
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Update Post</label>
+      <textarea type="text" class="form-control" id="body"  name="body" [(ngModel)]="post.body" ngModel #body="ngModel" required ></textarea>
+    
+    </div>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="updateForm.invalid">update</button>
+  </form>

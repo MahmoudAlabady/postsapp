@@ -1,0 +1,55 @@
+<form #myForm="ngForm" (ngSubmit)="addPost(myForm.value); myForm.reset()" class="container">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" ngModel #title="ngModel" required/>
+  <div *ngIf="title.touched && title.valid">
+    <div *ngIf="title.errors?.['required']">
+      *Title is required*
+    </div>
+  </div>
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Password</label>
+    <input type="text" class="form-control" id="body" name="body" ngModel #body="ngModel" required />
+  <div *ngIf="body.touched && body.valid">
+    <div *ngIf="body.errors?.['required']" >
+      *body is required *
+
+    </div>
+  </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">add</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">userId</th>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <th scope="row">{{ post.userId }}</th>
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.body }}</td>
+      <td>
+        <a routerLink="{{ post.id }}">
+          <button type="button" class="btn btn-primary">visit</button>
+        </a>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="deletePosts(post)">delete</button>
+      </td>
+      <td>
+        <a routerLink="editPosts/{{ post.id }}">
+          <button type="button" class="btn btn-success">update</button>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
