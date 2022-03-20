@@ -8,7 +8,8 @@ import { SinglePostComponent } from './views/single-post/single-post.component';
 import { UsersComponent } from './views/users/users.component';
 
 const routes: Routes = [
-  {path: '', component:UsersComponent},
+  // {path: '', component:UsersComponent},
+  {path: '', component:PostsComponent},
   {path: 'posts', component:PostsComponent},
   {path: 'profile', component:ProfileComponent},
   {path: 'about', component:AboutComponent},
