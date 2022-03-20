@@ -14,7 +14,7 @@ getPosts(){
   return this.http.get<Posts[]>(this.url)
 }
 getSinglePost(id:any){
-  console.log(this.http.get<Posts>(this.url +id));
+  // console.log(this.http.get<Posts>(this.url +id));
   return this.http.get<Posts>(this.url+ id)
   
 }
