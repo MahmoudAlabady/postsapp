@@ -1,3 +1,11 @@
+
+Online Demo:
+------
+https://postapp-alabady.herokuapp.com/posts
+
+sample video testing:
+---------
+https://drive.google.com/file/d/1R_3YZb4JyXqclbTFEVDjTYajGgC5xh0Q/view?usp=sharing
 # Postsapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
